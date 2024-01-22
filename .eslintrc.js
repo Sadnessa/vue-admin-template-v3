@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint',
+    // parser: 'babel-eslint',
     sourceType: 'module'
   },
   env: {
@@ -9,21 +9,20 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['plugin:vue/recommended', 'eslint:recommended'],
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:vue/vue3-essential',
+    "plugin:vue/vue3-strongly-recommended",
+    "plugin:vue/vue3-recommended",
+    //'eslint:recommended'
+  ],
 
   // add your custom rules here
-  //it is base on https://github.com/vuejs/eslint-config-vue
+  //  it is base on https://github.com/vuejs/eslint-config-vue
   rules: {
-    "vue/max-attributes-per-line": [2, {
-      "singleline": 10,
-      "multiline": {
-        "max": 1,
-        "allowFirstLine": false
-      }
-    }],
+    'vue/multi-word-component-names': 'off',
     "vue/singleline-html-element-content-newline": "off",
-    "vue/multiline-html-element-content-newline":"off",
-    "vue/name-property-casing": ["error", "PascalCase"],
+    "vue/multiline-html-element-content-newline": "off",
     "vue/no-v-html": "off",
     'accessor-pairs': 2,
     'arrow-spacing': [2, {
@@ -47,7 +46,7 @@ module.exports = {
     'curly': [2, 'multi-line'],
     'dot-location': [2, 'property'],
     'eol-last': 2,
-    'eqeqeq': ["error", "always", {"null": "ignore"}],
+    'eqeqeq': ["error", "always", { "null": "ignore" }],
     'generator-star-spacing': [2, {
       'before': true,
       'after': true
